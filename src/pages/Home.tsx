@@ -35,8 +35,8 @@ const Home = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section - FDM Group Style */}
-      <section className="py-24 bg-slate-900 relative overflow-hidden">
+      {/* Hero Section - Large Banner */}
+      <section className="py-32 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -51,27 +51,25 @@ const Home = () => {
             <div className="space-y-8">
               <div className="space-y-6">
                 <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
-                  We are a global{' '}
-                  <span className="text-lime-400">professional services</span>{' '}
-                  and technology consultancy
+                  Transform Your Business & Career
                 </h1>
                 <p className="text-xl text-slate-300 leading-relaxed max-w-2xl">
-                  Transforming businesses through innovative consulting solutions while developing 
-                  the next generation of tech professionals through real-world experience programs.
+                  Leading consultancy delivering innovative solutions while developing 
+                  the next generation of tech professionals through real-world experience.
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/consulting"
-                  className="inline-flex items-center bg-lime-400 text-slate-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-lime-500 transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center bg-gradient-to-r from-purple-600 to-lime-400 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                 >
                   Our Services
                   <ArrowRight className="ml-2" size={20} />
                 </Link>
                 <Link
                   to="/apply"
-                  className="inline-flex items-center border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-slate-900 transition-all duration-300"
+                  className="inline-flex items-center border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-slate-900 transition-all duration-300"
                 >
                   Apply for Training
                   <ArrowRight className="ml-2" size={20} />
@@ -277,7 +275,7 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/apply"
-              className="inline-flex items-center bg-lime-400 text-slate-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-lime-500 transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center bg-gradient-to-r from-purple-600 to-lime-400 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
             >
               Apply Now
               <ArrowRight className="ml-2" size={20} />
