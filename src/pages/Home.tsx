@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
+  console.log('Footer component starting to render');
+  
   return (
     <footer className="bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -99,6 +101,8 @@ const Footer = () => {
       </div>
     </footer>
   );
+  
+  console.log('Footer component render complete');
 };
 
 export default Footer;
