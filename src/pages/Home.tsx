@@ -127,3 +127,5 @@ const Footer = () => {
 
 export default Footer;
               <Link to="/consulting" className="text-slate-300 hover:text-purple-400 transition-colors">
+  )
+}
