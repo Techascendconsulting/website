@@ -21,7 +21,7 @@ const Footer = () => {
             <p className="text-slate-300 mb-6 max-w-md">
               A forward-thinking company blending software solutions and talent development. 
               We provide innovative consulting services and train the next generation of 
-              <Link to="/talent-development" className="text-slate-300 hover:text-purple-400 transition-colors">tech professionals</Link>.
+              tech professionals.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-slate-400 hover:text-lime-400 transition-colors">
