@@ -1,88 +1,152 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Briefcase, Workflow, Users, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useReveal } from '../hooks/useReveal';
 
-const SectionCard: React.FC<{ title: string; subtitle: string; children: React.ReactNode; id?: string }> = ({ title, subtitle, children, id }) => (
-  <section id={id} className="rounded-2xl border border-white/10 bg-[#0F172A] p-8 md:p-10 shadow-xl">
-    <header className="mb-6">
-      <h2 className="text-2xl md:text-3xl font-bold text-white">{title}</h2>
-      <p className="mt-2 text-slate-300">{subtitle}</p>
-    </header>
-    <div>{children}</div>
-  </section>
-);
-
-const ItemRow: React.FC<{ title: string; desc: string }> = ({ title, desc }) => (
-  <div className="flex items-start gap-4 p-4 rounded-xl bg-[#0B0F14]/60 border border-white/10">
-    <div className="mt-0.5 text-lime-400">
-      <CheckCircle2 className="w-5 h-5" />
-    </div>
-    <div>
-      <div className="font-semibold text-white">{title}</div>
-      <p className="text-slate-300 text-sm md:text-base mt-1">{desc}</p>
-    </div>
-  </div>
+const Bullet: React.FC<{ text: string }> = ({ text }) => (
+  <li className="flex items-start gap-3">
+    <CheckCircle2 className="w-5 h-5 text-lime-400 mt-0.5" />
+    <span className="text-slate-200">{text}</span>
+  </li>
 );
 
 const Services: React.FC = () => {
-  return (
-    <main className="pt-28 pb-20 bg-[#0B0F14] min-h-screen">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">Services</h1>
-          <p className="mt-4 text-slate-300 text-lg">
-            Immediate delivery impact from experienced consultants, plus a pipeline of project-ready analysts to scale sustainably.
-          </p>
-        </div>
+  const hero = useReveal();
+  const consult = useReveal();
+  const talent = useReveal();
+  const caps = useReveal();
+  const engage = useReveal();
 
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-          <SectionCard
-            id="consulting"
-            title="Consulting Delivery"
-            subtitle="Delivery leaders specialising in Business Analysis, Product Ownership, Project Delivery, and Digital Transformation."
+  return (
+    <main className="pt-28 bg-[#0B0F14] min-h-screen">
+      {/* Hero */}
+      <section ref={hero.ref as any} className="pb-10">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div
+            style={{
+              opacity: hero.visible ? 1 : 0,
+              transform: hero.visible ? 'translateY(0)' : 'translateY(12px)',
+              transition: 'all 400ms ease-out',
+            }}
           >
-            <div className="space-y-4">
-              <ItemRow title="Business Analysis" desc="From discovery to UAT—clear requirements, stakeholder alignment, measurable outcomes." />
-              <ItemRow title="Product Ownership" desc="Vision, backlog, and value delivery—keeping teams focused on the most impactful work." />
-              <ItemRow title="Project Delivery" desc="Plan, govern, and deliver—PMO rigour with agile execution to land business-critical change." />
-              <ItemRow title="Digital Transformation" desc="Turn strategy into shipped outcomes—operating models, cloud adoption, ways of working." />
-            </div>
-            <div className="mt-6">
-              <Link to="/contact" className="inline-flex items-center bg-gradient-to-r from-purple-600 to-lime-500 text-white px-5 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
+            <h1 className="text-4xl md:text-5xl font-bold text-white">Consulting Delivery & Project-Ready Talent</h1>
+            <p className="mt-4 text-slate-300 text-lg">
+              Immediate impact from experienced consultants and a pipeline of analysts trained on live deliverables. One partner to deliver now and scale sustainably.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link to="/contact" className="inline-flex items-center bg-gradient-to-r from-purple-600 to-lime-500 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
                 Book a consultation <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
-            </div>
-          </SectionCard>
-
-          <SectionCard
-            id="talent"
-            title="Project-Ready Talent"
-            subtitle="Associate consultants trained and tested on live deliverables, ready to contribute from day one."
-          >
-            <div className="space-y-4">
-              <ItemRow title="Associate Business Analysts" desc="Evidence-based analysts who gather, model, and communicate change effectively." />
-              <ItemRow title="Data & Reporting Analysts" desc="Insightful dashboards and reporting that connect business to action." />
-              <ItemRow title="PMO Analysts" desc="Pragmatic governance, risk management, and delivery cadence." />
-              <ItemRow title="Onboarding & Placement" desc="Structured onboarding, supervision, and ongoing performance support." />
-            </div>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link to="/careers" className="inline-flex items-center bg-[#0F172A] border border-white/10 text-white px-5 py-3 rounded-xl font-semibold hover:border-purple-500 hover:shadow-lg transition-all">
-                Join as an Associate
-              </Link>
-              <Link to="/contact" className="inline-flex items-center bg-gradient-to-r from-purple-600 to-lime-500 text-white px-5 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
-                Request profiles <ArrowRight className="ml-2 w-4 h-4" />
+              <Link to="/case-studies" className="inline-flex items-center bg-[#0F172A] border border-white/10 text-white px-6 py-3 rounded-xl font-semibold hover:border-purple-500 transition-all">
+                View case studies
               </Link>
             </div>
-          </SectionCard>
+          </div>
+          <div className="order-first lg:order-none">
+            <img
+              src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg"
+              alt="Consulting team collaborating"
+              className="w-full h-[320px] md:h-[420px] object-cover rounded-2xl border border-white/10 shadow-2xl"
+              loading="lazy"
+            />
+          </div>
         </div>
+      </section>
 
-        <div className="mt-14 text-center">
-          <p className="text-slate-300">Need something bespoke?</p>
-          <Link to="/contact" className="mt-3 inline-flex items-center bg-transparent border border-white/20 text-white px-5 py-3 rounded-xl font-semibold hover:border-lime-400 hover:text-lime-400 transition-all">
+      {/* Consulting Delivery */}
+      <section ref={consult.ref as any} className="py-10">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div
+            className="order-last lg:order-none"
+            style={{ opacity: consult.visible ? 1 : 0, transform: consult.visible ? 'translateY(0)' : 'translateY(12px)', transition: 'all 400ms ease-out 60ms' }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Consulting Delivery</h2>
+            <p className="mt-3 text-slate-300">
+              Specialists in Business Analysis, Product Ownership, Project Delivery, and Digital Transformation—focused on measurable business outcomes.
+            </p>
+            <ul className="mt-5 space-y-3">
+              <Bullet text="Business Analysis: discovery to UAT, with clear, testable requirements" />
+              <Bullet text="Product Ownership: vision, roadmap, and ruthless prioritisation" />
+              <Bullet text="Project Delivery: PMO rigour with agile execution" />
+              <Bullet text="Digital Transformation: operating models, cloud adoption, and ways of working" />
+            </ul>
+          </div>
+          <div className="relative">
+            <img
+              src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+              alt="Whiteboard workshop"
+              className="w-full h-[340px] object-cover rounded-2xl border border-white/10 shadow-2xl"
+              loading="lazy"
+              style={{ opacity: consult.visible ? 1 : 0, transform: consult.visible ? 'translateY(0)' : 'translateY(12px)', transition: 'all 400ms ease-out' }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Project-Ready Talent */}
+      <section ref={talent.ref as any} className="py-10">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div className="relative order-first">
+            <img
+              src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+              alt="Analysts collaborating"
+              className="w-full h-[340px] object-cover rounded-2xl border border-white/10 shadow-2xl"
+              loading="lazy"
+              style={{ opacity: talent.visible ? 1 : 0, transform: talent.visible ? 'translateY(0)' : 'translateY(12px)', transition: 'all 400ms ease-out' }}
+            />
+          </div>
+          <div
+            style={{ opacity: talent.visible ? 1 : 0, transform: talent.visible ? 'translateY(0)' : 'translateY(12px)', transition: 'all 400ms ease-out 60ms' }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Project-Ready Talent</h2>
+            <p className="mt-3 text-slate-300">
+              Analysts trained and tested on live deliverables with our senior team—ready to contribute from day one. Inspired by UK leaders in train-and-deploy models.
+            </p>
+            <ul className="mt-5 space-y-3">
+              <Bullet text="Associate Business Analysts, Data/Reporting Analysts, PMO Analysts" />
+              <Bullet text="Placement with structured onboarding and supervision" />
+              <Bullet text="Ongoing performance support and development" />
+              <Bullet text="Scale capacity while reducing delivery risk" />
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Capabilities grid */}
+      <section ref={caps.ref as any} className="py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <h3 className="text-2xl font-semibold text-white">Capabilities</h3>
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[{icon: <Briefcase className="w-5 h-5" />, t:'Delivery Leadership'}, {icon:<Workflow className="w-5 h-5"/>, t:'Agile & Product'}, {icon:<Users className="w-5 h-5"/>, t:'Stakeholder & Change'}, {icon:<Sparkles className="w-5 h-5"/>, t:'Innovation Enablement'}].map((c, i) => (
+              <div key={i} className="rounded-xl border border-white/10 bg-[#0F172A] p-4 text-white/90 flex items-center gap-3 hover:border-lime-400 transition-colors"
+                   style={{opacity: caps.visible ? 1 : 0, transform: caps.visible ? 'none' : 'translateY(8px)', transition: `all 300ms ease-out ${i*50}ms`}}>
+                <span className="text-lime-400">{c.icon}</span>
+                <span>{c.t}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Engagement models */}
+      <section ref={engage.ref as any} className="py-12">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {[{
+            h:'Consulting Teams', b:'Cross-functional squads to deliver programmes and critical initiatives.'
+          },{h:'Embedded Consultants', b:'Specialists embedded in your teams to accelerate delivery.'},{h:'Associate Cohorts', b:'Scale with project-ready analysts, supervised and performance-managed.'}].map((x, i) => (
+            <div key={x.h} className="rounded-2xl border border-white/10 bg-[#0F172A] p-6 shadow-xl"
+                 style={{opacity: engage.visible ? 1 : 0, transform: engage.visible ? 'none' : 'translateY(8px)', transition: `all 350ms ease-out ${i*80}ms`}}>
+              <h4 className="text-white font-semibold text-xl">{x.h}</h4>
+              <p className="text-slate-300 mt-2">{x.b}</p>
+            </div>
+          ))}
+        </div>
+        <div className="max-w-7xl mx-auto px-6 mt-8 text-center">
+          <Link to="/contact" className="inline-flex items-center bg-gradient-to-r from-purple-600 to-lime-500 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
             Talk to a consultant <ArrowRight className="ml-2 w-4 h-4" />
           </Link>
         </div>
-      </div>
+      </section>
     </main>
   );
 };
