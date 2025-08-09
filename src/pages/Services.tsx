@@ -5,8 +5,8 @@ import { useReveal } from '../hooks/useReveal';
 
 const Bullet: React.FC<{ text: string }> = ({ text }) => (
   <li className="flex items-start gap-3">
-    <CheckCircle2 className="w-5 h-5 text-lime-400 mt-0.5" />
-    <span className="text-slate-200">{text}</span>
+    <CheckCircle2 className="w-5 h-5 text-lime-500 mt-0.5" />
+    <span className="text-slate-700">{text}</span>
   </li>
 );
 
@@ -18,7 +18,7 @@ const Services: React.FC = () => {
   const engage = useReveal();
 
   return (
-    <main className="pt-28 bg-[#0B0F14] min-h-screen">
+    <main className="pt-28 bg-white min-h-screen">
       {/* Hero */}
       <section ref={hero.ref as any} className="pb-10">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -29,15 +29,15 @@ const Services: React.FC = () => {
               transition: 'all 400ms ease-out',
             }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-white">Consulting Delivery & Project-Ready Talent</h1>
-            <p className="mt-4 text-slate-300 text-lg">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900">Consulting Delivery & Project-Ready Talent</h1>
+            <p className="mt-4 text-slate-600 text-lg">
               Immediate impact from experienced consultants and a pipeline of analysts trained on live deliverables. One partner to deliver now and scale sustainably.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link to="/contact" className="inline-flex items-center bg-gradient-to-r from-purple-600 to-lime-500 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
                 Book a consultation <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
-              <Link to="/case-studies" className="inline-flex items-center bg-[#0F172A] border border-white/10 text-white px-6 py-3 rounded-xl font-semibold hover:border-purple-500 transition-all">
+              <Link to="/case-studies" className="inline-flex items-center bg-white border border-slate-200 text-slate-900 px-6 py-3 rounded-xl font-semibold hover:border-purple-500 transition-all">
                 View case studies
               </Link>
             </div>
@@ -46,7 +46,7 @@ const Services: React.FC = () => {
             <img
               src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg"
               alt="Consulting team collaborating"
-              className="w-full h-[320px] md:h-[420px] object-cover rounded-2xl border border-white/10 shadow-2xl"
+              className="w-full h-[320px] md:h-[420px] object-cover rounded-2xl border border-slate-200 shadow-2xl"
               loading="lazy"
             />
           </div>
@@ -54,14 +54,14 @@ const Services: React.FC = () => {
       </section>
 
       {/* Consulting Delivery */}
-      <section ref={consult.ref as any} className="py-10">
+      <section ref={consult.ref as any} className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div
             className="order-last lg:order-none"
             style={{ opacity: consult.visible ? 1 : 0, transform: consult.visible ? 'translateY(0)' : 'translateY(12px)', transition: 'all 400ms ease-out 60ms' }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white">Consulting Delivery</h2>
-            <p className="mt-3 text-slate-300">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Consulting Delivery</h2>
+            <p className="mt-3 text-slate-600">
               Specialists in Business Analysis, Product Ownership, Project Delivery, and Digital Transformation—focused on measurable business outcomes.
             </p>
             <ul className="mt-5 space-y-3">
@@ -75,7 +75,7 @@ const Services: React.FC = () => {
             <img
               src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
               alt="Whiteboard workshop"
-              className="w-full h-[340px] object-cover rounded-2xl border border-white/10 shadow-2xl"
+              className="w-full h-[340px] object-cover rounded-2xl border border-slate-200 shadow-2xl"
               loading="lazy"
               style={{ opacity: consult.visible ? 1 : 0, transform: consult.visible ? 'translateY(0)' : 'translateY(12px)', transition: 'all 400ms ease-out' }}
             />
@@ -84,13 +84,13 @@ const Services: React.FC = () => {
       </section>
 
       {/* Project-Ready Talent */}
-      <section ref={talent.ref as any} className="py-10">
+      <section ref={talent.ref as any} className="py-10 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="relative order-first">
             <img
               src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
               alt="Analysts collaborating"
-              className="w-full h-[340px] object-cover rounded-2xl border border-white/10 shadow-2xl"
+              className="w-full h-[340px] object-cover rounded-2xl border border-slate-200 shadow-2xl"
               loading="lazy"
               style={{ opacity: talent.visible ? 1 : 0, transform: talent.visible ? 'translateY(0)' : 'translateY(12px)', transition: 'all 400ms ease-out' }}
             />
@@ -98,8 +98,8 @@ const Services: React.FC = () => {
           <div
             style={{ opacity: talent.visible ? 1 : 0, transform: talent.visible ? 'translateY(0)' : 'translateY(12px)', transition: 'all 400ms ease-out 60ms' }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white">Project-Ready Talent</h2>
-            <p className="mt-3 text-slate-300">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Project-Ready Talent</h2>
+            <p className="mt-3 text-slate-600">
               Analysts trained and tested on live deliverables with our senior team—ready to contribute from day one. Inspired by UK leaders in train-and-deploy models.
             </p>
             <ul className="mt-5 space-y-3">
@@ -112,8 +112,8 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* Capabilities grid */}
-      <section ref={caps.ref as any} className="py-12">
+      {/* Capabilities grid (dark contrast) */}
+      <section ref={caps.ref as any} className="py-12 bg-[#0B0F14]">
         <div className="max-w-7xl mx-auto px-6">
           <h3 className="text-2xl font-semibold text-white">Capabilities</h3>
           <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -128,16 +128,16 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* Engagement models */}
-      <section ref={engage.ref as any} className="py-12">
+      {/* Engagement models on light */}
+      <section ref={engage.ref as any} className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
           {[{
             h:'Consulting Teams', b:'Cross-functional squads to deliver programmes and critical initiatives.'
           },{h:'Embedded Consultants', b:'Specialists embedded in your teams to accelerate delivery.'},{h:'Associate Cohorts', b:'Scale with project-ready analysts, supervised and performance-managed.'}].map((x, i) => (
-            <div key={x.h} className="rounded-2xl border border-white/10 bg-[#0F172A] p-6 shadow-xl"
+            <div key={x.h} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
                  style={{opacity: engage.visible ? 1 : 0, transform: engage.visible ? 'none' : 'translateY(8px)', transition: `all 350ms ease-out ${i*80}ms`}}>
-              <h4 className="text-white font-semibold text-xl">{x.h}</h4>
-              <p className="text-slate-300 mt-2">{x.b}</p>
+              <h4 className="text-slate-900 font-semibold text-xl">{x.h}</h4>
+              <p className="text-slate-600 mt-2">{x.b}</p>
             </div>
           ))}
         </div>

@@ -29,27 +29,27 @@ const CASES = [
 ];
 
 const Card: React.FC<typeof CASES[number]> = ({ title, sector, before, after, img, metrics }) => (
-  <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0F172A] shadow-xl">
+  <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
     <div className="overflow-hidden">
       <img src={img} alt={title} className="w-full h-44 object-cover transition-transform duration-300 hover:scale-[1.03]" loading="lazy" />
     </div>
     <div className="p-6">
-      <div className="text-sm text-slate-400">{sector}</div>
-      <h3 className="text-xl font-semibold text-white mt-1">{title}</h3>
+      <div className="text-sm text-slate-500">{sector}</div>
+      <h3 className="text-xl font-semibold text-slate-900 mt-1">{title}</h3>
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="rounded-xl bg-[#0B0F14]/60 border border-white/10 p-4">
-          <div className="text-slate-400 text-xs uppercase tracking-wide">Before</div>
-          <p className="text-slate-300 mt-1 text-sm">{before}</p>
+        <div className="rounded-xl bg-slate-50 border border-slate-200 p-4">
+          <div className="text-slate-500 text-xs uppercase tracking-wide">Before</div>
+          <p className="text-slate-700 mt-1 text-sm">{before}</p>
         </div>
-        <div className="rounded-xl bg-[#0B0F14]/60 border border-white/10 p-4">
-          <div className="text-slate-400 text-xs uppercase tracking-wide">After</div>
-          <p className="text-slate-300 mt-1 text-sm">{after}</p>
+        <div className="rounded-xl bg-slate-50 border border-slate-200 p-4">
+          <div className="text-slate-500 text-xs uppercase tracking-wide">After</div>
+          <p className="text-slate-700 mt-1 text-sm">{after}</p>
         </div>
       </div>
       {metrics && (
         <div className="mt-4 flex flex-wrap gap-2">
           {metrics.map((m) => (
-            <span key={m} className="text-xs bg-white/5 text-white px-3 py-1 rounded-full border border-white/10">{m}</span>
+            <span key={m} className="text-xs bg-slate-50 text-slate-800 px-3 py-1 rounded-full border border-slate-200">{m}</span>
           ))}
         </div>
       )}
@@ -61,16 +61,16 @@ const CaseStudies: React.FC = () => {
   const hero = useReveal();
 
   return (
-    <main className="pt-28 bg-[#0B0F14] min-h-screen">
+    <main className="pt-28 bg-white min-h-screen">
       {/* Hero */}
       <section ref={hero.ref as any} className="pb-8">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div style={{opacity: hero.visible ? 1 : 0, transform: hero.visible ? 'none' : 'translateY(10px)', transition: 'all 380ms ease-out'}}>
-            <h1 className="text-4xl md:text-5xl font-bold text-white">Case Studies</h1>
-            <p className="mt-4 text-slate-300 text-lg">Real outcomes delivered across industries—clear before and after impact.</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900">Case Studies</h1>
+            <p className="mt-4 text-slate-600 text-lg">Real outcomes delivered across industries—clear before and after impact.</p>
           </div>
           <div>
-            <img src="https://images.pexels.com/photos/3184300/pexels-photo-3184300.jpeg" alt="Case studies montage" className="w-full h-[360px] object-cover rounded-2xl border border-white/10 shadow-2xl" loading="lazy" />
+            <img src="https://images.pexels.com/photos/3184300/pexels-photo-3184300.jpeg" alt="Case studies montage" className="w-full h-[360px] object-cover rounded-2xl border border-slate-200 shadow-2xl" loading="lazy" />
           </div>
         </div>
       </section>
