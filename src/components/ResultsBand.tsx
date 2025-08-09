@@ -32,7 +32,7 @@ const ITEMS: ResultItem[] = [
 ];
 
 const ResultsBand: React.FC = () => {
-  const [activeId, setActiveId] = React.useState<number | null>(null);
+  const [activeId, setActiveId] = React.useState<number | null>(1);
 
   const activeItem = ITEMS.find((i) => i.id === activeId) || null;
 
