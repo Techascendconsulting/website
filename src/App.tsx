@@ -13,7 +13,7 @@ import ApplyNow from './pages/ApplyNow';
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL || '/website/'}>
       <div className="min-h-screen bg-white">
         <Navbar />
         <Routes>

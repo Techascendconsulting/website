@@ -6,6 +6,36 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
+  // Close dropdowns when clicking outside or pressing Escape
+  const navRef = React.useRef<HTMLElement | null>(null);
+
+  React.useEffect(() => {
+    const handleDocumentClick = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleDocumentClick);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleDocumentClick);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  // Close any open dropdown when route changes
+  React.useEffect(() => {
+    setActiveDropdown(null);
+    // Also close mobile menu on navigation
+    setIsOpen(false);
+  }, [location.pathname, location.hash]);
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -40,11 +70,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900 shadow-2xl">
+    <nav ref={navRef} className="fixed top-0 left-0 right-0 z-50 bg-slate-900 shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3" onClick={() => setActiveDropdown(null)}>
             <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-lime-500 rounded-xl flex items-center justify-center shadow-lg">
               <span className="text-white font-bold text-xl">TA</span>
             </div>
@@ -62,6 +92,8 @@ const Navbar = () => {
                   <div>
                     <button
                       onClick={() => handleDropdownToggle(item.name)}
+                      aria-haspopup="menu"
+                      aria-expanded={activeDropdown === item.name}
                       className={`flex items-center space-x-1 text-slate-300 hover:text-lime-400 transition-colors font-medium px-4 py-2 rounded-lg hover:bg-slate-800 ${
                         location.pathname === item.href ? 'text-lime-400 bg-slate-800' : ''
                       }`}
@@ -71,11 +103,10 @@ const Navbar = () => {
                         activeDropdown === item.name ? 'rotate-180' : ''
                       }`} />
                     </button>
-                    
                     {/* Dropdown Menu */}
                     <div className={`absolute top-full left-0 mt-2 w-64 bg-slate-800 rounded-xl shadow-2xl border border-slate-700 transition-all duration-200 ${
                       activeDropdown === item.name ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
-                    }`}>
+                    }`} role="menu">
                       <div className="py-2">
                         {item.dropdown.map((dropdownItem) => (
                           <Link
@@ -83,6 +114,7 @@ const Navbar = () => {
                             to={dropdownItem.href}
                             className="block px-4 py-3 text-slate-300 hover:text-lime-400 hover:bg-slate-700 transition-colors"
                             onClick={() => setActiveDropdown(null)}
+                            role="menuitem"
                           >
                             {dropdownItem.name}
                           </Link>
@@ -96,6 +128,7 @@ const Navbar = () => {
                     className={`text-slate-300 hover:text-lime-400 transition-colors font-medium px-4 py-2 rounded-lg hover:bg-slate-800 ${
                       location.pathname === item.href ? 'text-lime-400 bg-slate-800' : ''
                     }`}
+                    onClick={() => setActiveDropdown(null)}
                   >
                     {item.name}
                   </Link>
@@ -105,6 +138,7 @@ const Navbar = () => {
             <Link
               to="/apply"
               className="ml-4 bg-gradient-to-r from-purple-600 to-lime-500 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              onClick={() => setActiveDropdown(null)}
             >
               Apply Now
             </Link>
@@ -115,6 +149,8 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-slate-300 hover:text-lime-400 transition-colors"
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -134,6 +170,8 @@ const Navbar = () => {
                         className={`flex items-center justify-between w-full px-3 py-2 text-slate-300 hover:text-lime-400 transition-colors font-medium rounded-lg hover:bg-slate-700 ${
                           location.pathname === item.href ? 'text-lime-400 bg-slate-700' : ''
                         }`}
+                        aria-haspopup="menu"
+                        aria-expanded={activeDropdown === item.name}
                       >
                         <span>{item.name}</span>
                         <ChevronDown className={`w-4 h-4 transition-transform ${
@@ -141,7 +179,7 @@ const Navbar = () => {
                         }`} />
                       </button>
                       {activeDropdown === item.name && (
-                        <div className="ml-4 mt-1 space-y-1">
+                        <div className="ml-4 mt-1 space-y-1" role="menu">
                           {item.dropdown.map((dropdownItem) => (
                             <Link
                               key={dropdownItem.name}
@@ -151,6 +189,7 @@ const Navbar = () => {
                                 setIsOpen(false);
                                 setActiveDropdown(null);
                               }}
+                              role="menuitem"
                             >
                               {dropdownItem.name}
                             </Link>

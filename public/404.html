@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>404</title>
+    <meta http-equiv="refresh" content="0; url=/website/" />
+    <script>
+      // Single Page Apps for GitHub Pages routing fallback
+      // https://github.com/rafgraph/spa-github-pages
+      (function(l){
+        var u = '/website/';
+        if (l.search) {
+          var q = {};
+          l.search.slice(1).split('&').forEach(function(v){ var a = v.split('='); q[a[0]] = a[1]; });
+          if (q.p) {
+            window.history.replaceState(null, null, u + (q.p || '') + (q.q ? ('?' + q.q) : '') + (l.hash || ''));
+          }
+        }
+      })(window.location)
+    </script>
+  </head>
+  <body>Redirecting...</body>
+</html>
