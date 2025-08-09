@@ -19,7 +19,7 @@ const ImpactIntro: React.FC = () => {
 
           {/* Right: Content */}
           <div className="order-2 lg:order-none">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 text-center">
               Consulting and Talent Solutions That Deliver Real Impact
             </h2>
             <p className="mt-4 text-base md:text-lg text-slate-600 max-w-prose">
