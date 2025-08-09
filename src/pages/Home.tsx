@@ -6,6 +6,7 @@ import ResultsBand from '../components/ResultsBand';
 import ImpactIntro from '../components/ImpactIntro';
 import TrustBand from '../components/TrustBand';
 import PartnersBand from '../components/PartnersBand';
+import CredibilityCollage from '../components/CredibilityCollage';
 
 const Home = () => {
   return (
@@ -166,121 +167,8 @@ const Home = () => {
       {/* Results Band Section */}
       <ResultsBand />
 
-      {/* Training Programs Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Training Programs</h2>
-            <p className="text-xl text-slate-600">Launch your tech career with our comprehensive training programs</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Business Analyst</h3>
-              <p className="text-slate-600 mb-4">Master business analysis with real project experience</p>
-              <div className="space-y-2 mb-6">
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Duration:</span>
-                  <span className="text-sm font-semibold text-slate-800">16 weeks</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Starting Salary:</span>
-                  <span className="text-sm font-semibold text-lime-600">£45k - £65k</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Placement Rate:</span>
-                  <span className="text-sm font-semibold text-purple-600">96%</span>
-                </div>
-              </div>
-              <Link
-                to="/talent-development"
-                className="w-full inline-flex items-center justify-center bg-lime-500 text-white px-4 py-3 rounded-lg font-semibold hover:bg-lime-600 hover:shadow-lg transition-all duration-300"
-              >
-                Learn More
-                <ArrowRight className="ml-2" size={16} />
-              </Link>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Project Manager</h3>
-              <p className="text-slate-600 mb-4">Lead successful projects from start to finish</p>
-              <div className="space-y-2 mb-6">
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Duration:</span>
-                  <span className="text-sm font-semibold text-slate-800">20 weeks</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Starting Salary:</span>
-                  <span className="text-sm font-semibold text-lime-600">£50k - £70k</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Placement Rate:</span>
-                  <span className="text-sm font-semibold text-purple-600">94%</span>
-                </div>
-              </div>
-              <Link
-                to="/talent-development"
-                className="w-full inline-flex items-center justify-center bg-lime-500 text-white px-4 py-3 rounded-lg font-semibold hover:bg-lime-600 hover:shadow-lg transition-all duration-300"
-              >
-                Learn More
-                <ArrowRight className="ml-2" size={16} />
-              </Link>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Product Owner</h3>
-              <p className="text-slate-600 mb-4">Drive product success with strategic thinking</p>
-              <div className="space-y-2 mb-6">
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Duration:</span>
-                  <span className="text-sm font-semibold text-slate-800">14 weeks</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Starting Salary:</span>
-                  <span className="text-sm font-semibold text-lime-600">£48k - £68k</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Placement Rate:</span>
-                  <span className="text-sm font-semibold text-purple-600">95%</span>
-                </div>
-              </div>
-              <Link
-                to="/talent-development"
-                className="w-full inline-flex items-center justify-center bg-lime-500 text-white px-4 py-3 rounded-lg font-semibold hover:bg-lime-600 hover:shadow-lg transition-all duration-300"
-              >
-                Learn More
-                <ArrowRight className="ml-2" size={16} />
-              </Link>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Scrum Master</h3>
-              <p className="text-slate-600 mb-4">Facilitate agile teams and transformation</p>
-              <div className="space-y-2 mb-6">
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Duration:</span>
-                  <span className="text-sm font-semibold text-slate-800">12 weeks</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Starting Salary:</span>
-                  <span className="text-sm font-semibold text-lime-600">£42k - £62k</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Placement Rate:</span>
-                  <span className="text-sm font-semibold text-purple-600">97%</span>
-                </div>
-              </div>
-              <Link
-                to="/talent-development"
-                className="w-full inline-flex items-center justify-center bg-lime-500 text-white px-4 py-3 rounded-lg font-semibold hover:bg-lime-600 hover:shadow-lg transition-all duration-300"
-              >
-                Learn More
-                <ArrowRight className="ml-2" size={16} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Credibility Collage Section (replaces Training Programs) */}
+      <CredibilityCollage />
     </div>
   );
 };
