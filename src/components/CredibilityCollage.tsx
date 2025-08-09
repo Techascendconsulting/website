@@ -47,61 +47,64 @@ const CredibilityCollage: React.FC = () => {
 
         {/* Collage grid */}
         <div className="mt-12 grid place-items-center">
-          <div className="relative grid gap-4 lg:gap-6" style={{ gridTemplateColumns: 'repeat(9, 1fr)' }}>
+          <div
+            className="relative grid gap-4 sm:gap-5 lg:gap-6"
+            style={{ gridTemplateColumns: 'repeat(12, minmax(0, 1fr))' }}
+          >
             {/* Top left (square ~220) */}
             <div
-              className={`group ${cardBase} col-start-2 col-end-3 justify-self-end`}
-              style={{ width: 220, height: 220, transitionDelay: visible ? '50ms' : '0ms', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
+              className={`group ${cardBase} col-start-2 col-end-5`}
+              style={{ height: 220, transitionDelay: visible ? '50ms' : '0ms', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
             >
-              <img src={IMAGES.topLeft} alt="Consultant on a video call" className={imgBase} loading="lazy" width={220} height={220} />
+              <img src={IMAGES.topLeft} alt="Consultant on a video call" className={imgBase} loading="lazy" />
             </div>
 
             {/* Top right (square ~220) */}
             <div
-              className={`group ${cardBase} col-start-8 col-end-9`}
-              style={{ width: 220, height: 220, transitionDelay: visible ? '100ms' : '0ms', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
+              className={`group ${cardBase} col-start-9 col-end-12`}
+              style={{ height: 220, transitionDelay: visible ? '100ms' : '0ms', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
             >
-              <img src={IMAGES.topRight} alt="Professional with tablet in workspace" className={imgBase} loading="lazy" width={220} height={220} />
+              <img src={IMAGES.topRight} alt="Professional with tablet in workspace" className={imgBase} loading="lazy" />
             </div>
 
-            {/* Middle left (portrait ~240x340) */}
+            {/* Middle left (portrait ~340) */}
             <div
-              className={`group ${cardBase} col-start-2 col-end-3 row-start-2`}
-              style={{ width: 240, height: 340, transitionDelay: visible ? '150ms' : '0ms', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
+              className={`group ${cardBase} col-start-2 col-end-5 row-start-2`}
+              style={{ height: 340, transitionDelay: visible ? '150ms' : '0ms', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
             >
-              <img src={IMAGES.midLeft} alt="Colleagues reviewing data on laptop" className={imgBase} loading="lazy" width={240} height={340} />
+              <img src={IMAGES.midLeft} alt="Colleagues reviewing data on laptop" className={imgBase} loading="lazy" />
             </div>
 
-            {/* Center (largest ~360x480) */}
+            {/* Center (largest ~480) */}
             <div
-              className={`group ${cardBase} col-start-4 col-end-7 row-start-1 row-end-3 justify-self-center`}
-              style={{ width: 360, height: 480, transitionDelay: visible ? '200ms' : '0ms', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
+              className={`group ${cardBase} col-start-5 col-end-9 row-start-1 row-end-3`}
+              style={{ height: 480, transitionDelay: visible ? '200ms' : '0ms', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
             >
-              <img src={IMAGES.center} alt="Leader presenting to a group" className={imgBase} loading="lazy" width={360} height={480} />
+              <img src={IMAGES.center} alt="Leader presenting to a group" className={imgBase} loading="lazy" />
             </div>
 
-            {/* Middle right (portrait ~240x340) */}
+            {/* Middle right (portrait ~340) */}
             <div
-              className={`group ${cardBase} col-start-8 col-end-9 row-start-2`}
-              style={{ width: 240, height: 340, transitionDelay: visible ? '250ms' : '0ms', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
+              className={`group ${cardBase} col-start-9 col-end-12 row-start-2`}
+              style={{ height: 340, transitionDelay: visible ? '250ms' : '0ms', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
             >
-              <img src={IMAGES.midRight} alt="Consultant discussing with client at table" className={imgBase} loading="lazy" width={240} height={340} />
+              <img src={IMAGES.midRight} alt="Consultant discussing with client at table" className={imgBase} loading="lazy" />
             </div>
 
-            {/* Bottom left (landscape ~340x220) */}
+            {/* Bottom left (landscape ~220) */}
             <div
-              className={`group ${cardBase} col-start-3 col-end-6 row-start-3 justify-self-end`}
-              style={{ width: 340, height: 220, transitionDelay: visible ? '300ms' : '0ms', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
+              className={`group ${cardBase} col-start-3 col-end-7 row-start-3`}
+              style={{ height: 220, transitionDelay: visible ? '300ms' : '0ms', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
             >
-              <img src={IMAGES.bottomLeft} alt="Team collaborating over documents" className={imgBase} loading="lazy" width={340} height={220} />
+              <img src={IMAGES.bottomLeft} alt="Team collaborating over documents" className={imgBase} loading="lazy" />
             </div>
 
-            {/* Bottom right (landscape ~340x220) */}
+            {/* Bottom right (landscape ~220) */}
             <div
-              className={`group ${cardBase} col-start-5 col-end-8 row-start-3`}
-              style={{ width: 340, height: 220, transitionDelay: visible ? '350ms' : '0ms', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
+              className={`group ${cardBase} col-start-7 col-end-11 row-start-3`}
+              style={{ height: 220, transitionDelay: visible ? '350ms' : '0ms', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
             >
-              <img src={IMAGES.bottomRight} alt="Professional on a business call outdoors" className={imgBase} loading="lazy" width={340} height={220} />
+              <img src={IMAGES.bottomRight} alt="Professional on a business call outdoors" className={imgBase} loading="lazy" />
             </div>
           </div>
         </div>
