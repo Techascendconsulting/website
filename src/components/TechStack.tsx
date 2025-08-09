@@ -23,6 +23,15 @@ const ITEMS: StackItem[] = [
   { name: 'Power BI', slug: 'powerbi' },
 ];
 
+const getIconSrc = (slug: string): string => {
+  // Some environments block certain brand paths; proxy those to ensure visibility
+  const needsProxy = slug === 'amazonaws' || slug === 'microsoftazure' || slug === 'powerbi';
+  const base = `cdn.simpleicons.org/${slug}`;
+  return needsProxy
+    ? `https://images.weserv.nl/?url=${encodeURIComponent(base)}`
+    : `https://${base}`;
+};
+
 const TechStack: React.FC = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
@@ -82,34 +91,26 @@ const TechStack: React.FC = () => {
                 />
               ) : null}
 
-              <div
-                className="flex items-center justify-center"
-                style={{ filter: 'grayscale(100%))', WebkitFilter: 'grayscale(100%)' }}
-              >
+              <div className="flex items-center justify-center">
                 <img
-                  src={`https://cdn.simpleicons.org/${item.slug}`}
+                  src={getIconSrc(item.slug)}
                   alt={item.name}
                   width={56}
                   height={56}
-                  className="transition-all duration-200 group-hover:grayscale-0"
+                  className="transition-all duration-200"
                   style={{ filter: 'grayscale(100%)', WebkitFilter: 'grayscale(100%)' }}
+                  onError={(e) => {
+                    // Fallback directly to CDN if proxy fails
+                    (e.currentTarget as HTMLImageElement).src = `https://cdn.simpleicons.org/${item.slug}`;
+                  }}
                 />
               </div>
-              <div
-                className="text-sm font-medium text-slate-600 transition-colors"
-                style={{}}
-              >
-                {item.name}
-              </div>
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 rounded-xl border transition-colors"
-                style={{ borderColor: 'transparent' }}
-              />
+              <div className="text-sm font-medium text-slate-600 transition-colors">{item.name}</div>
+              <div aria-hidden className="pointer-events-none absolute inset-0 rounded-xl border transition-colors" style={{ borderColor: 'transparent' }} />
               <style>{`
                 .group:hover { border-color: ${BRAND_PURPLE}; box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
                 .group:focus-within { box-shadow: 0 0 0 2px ${BRAND_PURPLE} inset; }
-                .group:hover img { filter: none; }
+                .group:hover img { filter: none; -webkit-filter: none; }
               `}</style>
             </div>
           ))}
