@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Users, Target, Award, Clock, Briefcase, TrendingUp, Star, Zap } from 'lucide-react';
 import FeatureBand from '../components/FeatureBand';
+import ResultsBand from '../components/ResultsBand';
 
 const Home = () => {
   return (
@@ -152,6 +153,9 @@ const Home = () => {
 
       {/* Feature Band Section */}
       <FeatureBand />
+
+      {/* Results Band Section */}
+      <ResultsBand />
 
       {/* Training Programs Section */}
       <section className="py-20 bg-slate-50">
