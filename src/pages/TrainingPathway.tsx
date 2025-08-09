@@ -2,6 +2,8 @@ import React from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useReveal } from '../hooks/useReveal';
+import MetricStrip from '../components/MetricStrip';
+import Faq from '../components/Faq';
 
 const Step: React.FC<{ k: string; title: string; body: string }> = ({ k, title, body }) => (
   <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -34,6 +36,18 @@ const TrainingPathway: React.FC = () => {
         </div>
       </section>
 
+      {/* Metrics (dark contrast) */}
+      <section className="py-10 bg-[#0B0F14]">
+        <div className="max-w-7xl mx-auto px-6">
+          <MetricStrip inverted metrics={[
+            { value: '3', label: 'Core stages' },
+            { value: '8–14w', label: 'Typical duration' },
+            { value: 'Live', label: 'Deliverables' },
+            { value: 'Support', label: 'Supervision' },
+          ]} />
+        </div>
+      </section>
+
       {/* Steps */}
       <section ref={steps.ref as any} className="py-10 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -62,6 +76,18 @@ const TrainingPathway: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <h3 className="text-2xl font-semibold text-slate-900">FAQs</h3>
+          <Faq items={[
+            { q: 'How do you assess readiness?', a: 'Through evidence-based work products, supervision reviews, and scenario assessments.' },
+            { q: 'What support is provided after placement?', a: 'Regular check-ins, performance objectives, and escalation paths with senior consultants.' },
+            { q: 'Do you offer certifications?', a: 'We focus on outcomes and evidence. Certifications can be supported where useful.' },
+          ]} />
         </div>
       </section>
     </main>

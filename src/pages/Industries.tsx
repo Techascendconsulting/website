@@ -1,5 +1,6 @@
 import React from 'react';
 import { useReveal } from '../hooks/useReveal';
+import MetricStrip from '../components/MetricStrip';
 
 const SECTORS = [
   { title: 'Financial Services', body: 'Regulatory change, digital onboarding, core system modernisation, data lineage and reporting.', img: 'https://images.pexels.com/photos/210990/pexels-photo-210990.jpeg' },
@@ -28,6 +29,18 @@ const Industries: React.FC = () => {
         </div>
       </section>
 
+      {/* Metrics */}
+      <section className="py-8">
+        <div className="max-w-7xl mx-auto px-6">
+          <MetricStrip metrics={[
+            { value: '6+', label: 'Industries' },
+            { value: 'UK', label: 'Market focus' },
+            { value: 'Enterprise', label: 'Experience' },
+            { value: 'Outcomes', label: 'Driven' },
+          ]} />
+        </div>
+      </section>
+
       {/* Sector tiles */}
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -40,6 +53,18 @@ const Industries: React.FC = () => {
                 <h2 className="text-xl font-semibold text-slate-900">{s.title}</h2>
                 <p className="mt-2 text-slate-600">{s.body}</p>
               </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Dark credibility band */}
+      <section className="py-12 bg-[#0B0F14]">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+          {[{h:'Regulated delivery',b:'Proven experience in compliance-heavy contexts.'},{h:'Secure by design',b:'Governance and controls embedded in delivery.'},{h:'Outcome-first',b:'Shipped change aligned to business value.'}].map(x => (
+            <div key={x.h} className="rounded-2xl border border-white/10 bg-[#0F172A] p-6">
+              <div className="text-white font-semibold">{x.h}</div>
+              <p className="text-slate-300 mt-1">{x.b}</p>
             </div>
           ))}
         </div>

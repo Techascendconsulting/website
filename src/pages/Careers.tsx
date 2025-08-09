@@ -2,6 +2,10 @@ import React from 'react';
 import { ArrowRight, CheckCircle2, Gift, GraduationCap, Users, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useReveal } from '../hooks/useReveal';
+import MetricStrip from '../components/MetricStrip';
+import ProcessTimeline from '../components/ProcessTimeline';
+import ClientLogos from '../components/ClientLogos';
+import Faq from '../components/Faq';
 
 const Benefit: React.FC<{ icon: React.ReactNode; title: string; body: string }> = ({ icon, title, body }) => (
   <div className="p-5 rounded-xl bg-white border border-slate-200 flex items-start gap-3">
@@ -37,6 +41,18 @@ const Careers: React.FC = () => {
         </div>
       </section>
 
+      {/* Metrics (dark contrast) */}
+      <section className="py-10 bg-[#0B0F14]">
+        <div className="max-w-7xl mx-auto px-6">
+          <MetricStrip inverted metrics={[
+            { value: '200+', label: 'Placements' },
+            { value: '95%', label: 'Success rate' },
+            { value: '6 wks', label: 'Avg time to offer' },
+            { value: '£51k', label: 'Avg starting salary' },
+          ]} />
+        </div>
+      </section>
+
       {/* Two image/text blocks */}
       <section ref={blocks.ref as any} className="py-10">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -66,7 +82,37 @@ const Careers: React.FC = () => {
           <Benefit icon={<GraduationCap className="w-5 h-5" />} title="Learn → Do → Place" body="A practical pathway that builds evidence, not just certificates." />
           <Benefit icon={<Gift className="w-5 h-5" />} title="Paid client delivery" body="Contribute on real engagements from day one." />
         </div>
-        <div className="text-center mt-10">
+      </section>
+
+      {/* Career journey timeline + FAQ */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <h3 className="text-2xl font-semibold text-slate-900">Career journey</h3>
+            <ProcessTimeline steps={[
+              { k: '01', title: 'Foundation', body: 'Learn core consulting skills on live deliverables with supervision.' },
+              { k: '02', title: 'First role', body: 'Join client project as an associate consultant with clear objectives.' },
+              { k: '03', title: 'Progress', body: 'Move into senior roles (BA/PO/PM) with broader responsibilities.' },
+              { k: '04', title: 'Leadership', body: 'Lead teams and drive programmes with measurable outcomes.' },
+            ]} />
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold text-slate-900">FAQs</h3>
+            <Faq items={[
+              { q: 'What backgrounds do you accept?', a: 'We welcome diverse professional backgrounds where outcomes and communication are strong.' },
+              { q: 'Is training paid?', a: 'Client delivery is paid. Early learning phases may be unpaid depending on engagement.' },
+              { q: 'Where are roles based?', a: 'Mostly UK with hybrid patterns; some fully remote depending on the client.' },
+            ]} />
+          </div>
+        </div>
+      </section>
+
+      {/* Clients band */}
+      <section className="py-12 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <ClientLogos />
+        </div>
+        <div className="text-center mt-8">
           <Link to="/apply" className="inline-flex items-center bg-gradient-to-r from-purple-600 to-lime-500 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
             Apply now <ArrowRight className="ml-2 w-4 h-4" />
           </Link>

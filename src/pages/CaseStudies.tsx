@@ -1,5 +1,7 @@
 import React from 'react';
 import { useReveal } from '../hooks/useReveal';
+import MetricStrip from '../components/MetricStrip';
+import Faq from '../components/Faq';
 
 const CASES = [
   {
@@ -75,12 +77,38 @@ const CaseStudies: React.FC = () => {
         </div>
       </section>
 
+      {/* Metrics */}
+      <section className="py-8">
+        <div className="max-w-7xl mx-auto px-6">
+          <MetricStrip metrics={[
+            { value: '12w', label: 'Fastest delivery' },
+            { value: '0', label: 'Missed deadlines' },
+            { value: '28%', label: 'Cost savings' },
+            { value: '5+', label: 'System integrations' },
+          ]} />
+        </div>
+      </section>
+
       {/* Cards */}
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           {CASES.map((c) => (
             <Card key={c.title} {...c} />
           ))}
+        </div>
+      </section>
+
+      {/* FAQs (dark contrast) */}
+      <section className="py-12 bg-[#0B0F14]">
+        <div className="max-w-7xl mx-auto px-6">
+          <h3 className="text-2xl font-semibold text-white">FAQs</h3>
+          <div className="mt-4">
+            <Faq inverted items={[
+              { q: 'Do you provide references for case studies?', a: 'Yes, we can arrange references where NDAs allow and with client permission.' },
+              { q: 'How do you measure impact?', a: 'We align metrics upfront (time-to-market, cost, quality) and track them throughout delivery.' },
+              { q: 'Can we start small?', a: 'Absolutely—many engagements start with a scoped discovery or MVP before scaling.' },
+            ]} />
+          </div>
         </div>
       </section>
     </main>
