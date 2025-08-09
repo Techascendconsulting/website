@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className="bg-[#0B0F14] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -38,23 +38,38 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/consulting" className="text-slate-300 hover:text-lime-400 transition-colors">
-                  Consulting Services
+                <Link to="/services" className="text-slate-300 hover:text-lime-400 transition-colors">
+                  Services
                 </Link>
               </li>
               <li>
-                <Link to="/talent-development" className="text-slate-300 hover:text-lime-400 transition-colors">
-                  Talent Development
+                <Link to="/case-studies" className="text-slate-300 hover:text-lime-400 transition-colors">
+                  Case Studies
                 </Link>
               </li>
               <li>
-                <Link to="/work-experience" className="text-slate-300 hover:text-lime-400 transition-colors">
-                  Work Experience
+                <Link to="/industries" className="text-slate-300 hover:text-lime-400 transition-colors">
+                  Industries We Serve
                 </Link>
               </li>
               <li>
-                <Link to="/success-stories" className="text-slate-300 hover:text-lime-400 transition-colors">
-                  Success Stories
+                <Link to="/careers" className="text-slate-300 hover:text-lime-400 transition-colors">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link to="/training-pathway" className="text-slate-300 hover:text-lime-400 transition-colors">
+                  Training Pathway
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-slate-300 hover:text-lime-400 transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-slate-300 hover:text-lime-400 transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>

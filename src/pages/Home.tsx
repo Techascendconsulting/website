@@ -8,6 +8,9 @@ import TrustBand from '../components/TrustBand';
 import PartnersBand from '../components/PartnersBand';
 import CredibilityCollage from '../components/CredibilityCollage';
 import TechStack from '../components/TechStack';
+import IndustriesBand from '../components/IndustriesBand';
+import FeaturedCaseStudies from '../components/FeaturedCaseStudies';
+import FinalCtaStrip from '../components/FinalCtaStrip';
 
 const Home = () => {
   return (
@@ -84,24 +87,63 @@ const Home = () => {
 
       {/* Impact Intro Section */}
       <ImpactIntro />
+      <div className="max-w-7xl mx-auto px-6 -mt-6 mb-8">
+        <Link to="/services" className="inline-flex items-center bg-gradient-to-r from-purple-600 to-lime-500 text-white px-5 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
+          Explore Services <ArrowRight className="ml-2 w-4 h-4" />
+        </Link>
+      </div>
 
       {/* Partners Band Section */}
       <PartnersBand />
+      <div className="max-w-7xl mx-auto px-6 -mt-6 mb-8">
+        <Link to="/case-studies" className="inline-flex items-center bg-[#0F172A] border border-white/10 text-white px-5 py-3 rounded-xl font-semibold hover:border-purple-500 hover:shadow-lg transition-all">
+          See Case Studies
+        </Link>
+      </div>
 
       {/* Trust Band Section */}
       <TrustBand />
 
+      {/* Industries Band */}
+      <IndustriesBand />
+
       {/* Tech Stack Section (replaces Our Services) */}
       <TechStack />
+      <div className="max-w-7xl mx-auto px-6 -mt-6 mb-8">
+        <Link to="/services" className="inline-flex items-center bg-transparent border border-white/20 text-white px-5 py-3 rounded-xl font-semibold hover:border-lime-400 hover:text-lime-400 transition-all">
+          Our Capabilities <ArrowRight className="ml-2 w-4 h-4" />
+        </Link>
+      </div>
 
       {/* Feature Band Section */}
       <FeatureBand />
+      <div className="max-w-7xl mx-auto px-6 -mt-6 mb-8">
+        <Link to="/about" className="inline-flex items-center bg-transparent border border-white/20 text-white px-5 py-3 rounded-xl font-semibold hover:border-lime-400 hover:text-lime-400 transition-all">
+          About Tech Ascend <ArrowRight className="ml-2 w-4 h-4" />
+        </Link>
+      </div>
 
       {/* Results Band Section */}
       <ResultsBand />
+      <div className="max-w-7xl mx-auto px-6 -mt-6 mb-8">
+        <Link to="/services" className="inline-flex items-center bg-gradient-to-r from-purple-600 to-lime-500 text-white px-5 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
+          How We Deliver <ArrowRight className="ml-2 w-4 h-4" />
+        </Link>
+      </div>
 
       {/* Credibility Collage Section */}
       <CredibilityCollage />
+      <div className="max-w-7xl mx-auto px-6 -mt-6 mb-8">
+        <Link to="/careers" className="inline-flex items-center bg-[#0F172A] border border-white/10 text-white px-5 py-3 rounded-xl font-semibold hover:border-purple-500 hover:shadow-lg transition-all">
+          Careers & Pathways
+        </Link>
+      </div>
+
+      {/* Featured Case Studies */}
+      <FeaturedCaseStudies />
+
+      {/* Final CTA Strip */}
+      <FinalCtaStrip />
     </div>
   );
 };

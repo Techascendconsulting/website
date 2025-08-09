@@ -61,221 +61,47 @@ const Navbar = () => {
     id: 'Services',
     columns: [
       {
-        heading: 'Transformation',
+        heading: 'Consulting Delivery',
         items: [
-          {
-            icon: <Rocket className="w-5 h-5 text-lime-400" />,
-            title: 'Digital Transformation',
-            description: 'Modernize processes and platforms end-to-end',
-            href: '/consulting#digital-transformation',
-          },
-          {
-            icon: <Workflow className="w-5 h-5 text-lime-400" />,
-            title: 'Agile Implementation',
-            description: 'Adopt agile at team and enterprise scale',
-            href: '/consulting#agile-implementation',
-          },
-          {
-            icon: <Users className="w-5 h-5 text-lime-400" />,
-            title: 'Business Analysis',
-            description: 'Capture requirements that drive outcomes',
-            href: '/consulting#business-analysis',
-          },
+          { icon: <Rocket className="w-5 h-5 text-lime-400" />, title: 'Business Analysis', description: 'Requirements that drive outcomes', href: '/services#consulting' },
+          { icon: <Workflow className="w-5 h-5 text-lime-400" />, title: 'Product Ownership', description: 'Vision, backlog, and value', href: '/services#consulting' },
+          { icon: <Users className="w-5 h-5 text-lime-400" />, title: 'Project Delivery', description: 'Plan, govern, and deliver', href: '/services#consulting' },
         ],
       },
       {
-        heading: 'Strategy & Enablement',
+        heading: 'Project-Ready Talent',
         items: [
-          {
-            icon: <Shield className="w-5 h-5 text-lime-400" />,
-            title: 'Technology Strategy',
-            description: 'Roadmaps, governance, and risk management',
-            href: '/consulting#technology-strategy',
-          },
-          {
-            icon: <BarChart className="w-5 h-5 text-lime-400" />,
-            title: 'Data & Analytics',
-            description: 'Insights to inform smarter decisions',
-            href: '/resources',
-          },
-          {
-            icon: <Cloud className="w-5 h-5 text-lime-400" />,
-            title: 'Cloud Adoption',
-            description: 'Migration, optimization, and security',
-            href: '/resources',
-          },
-        ],
-      },
-      {
-        heading: 'Solutions & CTA',
-        items: [
-          {
-            icon: <Wrench className="w-5 h-5 text-lime-400" />,
-            title: 'Delivery Acceleration',
-            description: 'Tooling, automation, and DevOps practices',
-            href: '/resources',
-          },
-          {
-            icon: <Sparkles className="w-5 h-5 text-lime-400" />,
-            title: 'Innovation Labs',
-            description: 'Experimentation with measurable value',
-            href: '/resources',
-          },
-        ],
-        cta: {
-          label: 'Talk to a Consultant',
-          href: '/contact',
-        },
-      },
-    ],
-  } as const;
-
-  const trainingMega = {
-    id: 'Training',
-    columns: [
-      {
-        heading: 'Programs',
-        items: [
-          {
-            icon: <FileText className="w-5 h-5 text-lime-400" />,
-            title: 'Business Analyst',
-            description: 'Requirements, stakeholder, and delivery skills',
-            href: '/talent-development#business-analyst',
-          },
-          {
-            icon: <Briefcase className="w-5 h-5 text-lime-400" />,
-            title: 'Project Manager',
-            description: 'Plan, manage risk, and lead execution',
-            href: '/talent-development#project-manager',
-          },
-        ],
-      },
-      {
-        heading: 'Leadership Tracks',
-        items: [
-          {
-            icon: <GraduationCap className="w-5 h-5 text-lime-400" />,
-            title: 'Product Owner',
-            description: 'Own vision, backlog, and value delivery',
-            href: '/talent-development#product-owner',
-          },
-          {
-            icon: <Users className="w-5 h-5 text-lime-400" />,
-            title: 'Scrum Master',
-            description: 'Coach teams and enable continuous improvement',
-            href: '/talent-development#scrum-master',
-          },
-        ],
-      },
-      {
-        heading: 'Get Support',
-        items: [
-          {
-            icon: <MessagesSquare className="w-5 h-5 text-lime-400" />,
-            title: 'Career Coaching',
-            description: 'CV review, interview prep, job search',
-            href: '/resources',
-          },
-          {
-            icon: <BarChart className="w-5 h-5 text-lime-400" />,
-            title: 'Success Stories',
-            description: 'See outcomes from past cohorts',
-            href: '/success-stories',
-          },
-        ],
-        cta: {
-          label: 'Apply Now',
-          href: '/apply',
-        },
-      },
-    ],
-  } as const;
-
-  const workExperienceMega = {
-    id: 'Work Experience',
-    columns: [
-      {
-        heading: 'Explore Projects',
-        items: [
-          {
-            icon: <Briefcase className="w-5 h-5 text-lime-400" />,
-            title: 'Live Client Projects',
-            description: 'Real engagements with measurable outcomes',
-            href: '/work-experience',
-          },
-          {
-            icon: <Target className="w-5 h-5 text-lime-400" />,
-            title: 'Roles & Responsibilities',
-            description: 'BA, PM, PO, and Scrum roles on projects',
-            href: '/work-experience',
-          },
-          {
-            icon: <Award className="w-5 h-5 text-lime-400" />,
-            title: 'Portfolio Building',
-            description: 'Deliverables to showcase your skills',
-            href: '/work-experience',
-          },
-        ],
-      },
-      {
-        heading: 'Program Benefits',
-        items: [
-          {
-            icon: <Users className="w-5 h-5 text-lime-400" />,
-            title: 'Professional Mentorship',
-            description: 'Guidance from experienced consultants',
-            href: '/work-experience',
-          },
-          {
-            icon: <BarChart className="w-5 h-5 text-lime-400" />,
-            title: 'Career Outcomes',
-            description: 'Pathways into leading organizations',
-            href: '/success-stories',
-          },
-          {
-            icon: <Clock className="w-5 h-5 text-lime-400" />,
-            title: 'Timeline & Commitment',
-            description: '8–14 weeks of hands-on experience',
-            href: '/work-experience',
-          },
+          { icon: <Shield className="w-5 h-5 text-lime-400" />, title: 'Associate BAs', description: 'Evidence-based analysts', href: '/services#talent' },
+          { icon: <BarChart className="w-5 h-5 text-lime-400" />, title: 'PMO & Reporting', description: 'Cadence and insight', href: '/services#talent' },
+          { icon: <Cloud className="w-5 h-5 text-lime-400" />, title: 'Onboarding & Support', description: 'Placement and supervision', href: '/services#talent' },
         ],
       },
       {
         heading: 'Get Started',
         items: [
-          {
-            icon: <MessagesSquare className="w-5 h-5 text-lime-400" />,
-            title: 'Speak to Us',
-            description: 'We’ll help you choose the right path',
-            href: '/contact',
-          },
-          {
-            icon: <Sparkles className="w-5 h-5 text-lime-400" />,
-            title: 'Success Stories',
-            description: 'Hear from people who made the jump',
-            href: '/success-stories',
-          },
+          { icon: <MessagesSquare className="w-5 h-5 text-lime-400" />, title: 'Speak to Us', description: 'Explore options', href: '/contact' },
+          { icon: <Sparkles className="w-5 h-5 text-lime-400" />, title: 'Case Studies', description: 'See outcomes delivered', href: '/case-studies' },
         ],
-        cta: {
-          label: 'Apply for Work Experience',
-          href: '/apply',
-        },
+        cta: { label: 'Book a Consultation', href: '/contact' },
       },
     ],
   } as const;
 
+  // Remove trainingMega and workExperienceMega; new structure navigation below
+
   type MegaConfig = typeof servicesMega;
 
   const navigation: Array<
-    | { name: 'Home' | 'Success Stories' | 'Resources' | 'Contact'; href: string }
-    | { name: 'Services' | 'Training' | 'Work Experience'; href: string; mega: MegaConfig }
+    | { name: 'Home' | 'Case Studies' | 'Industries' | 'Careers' | 'Training Pathway' | 'About' | 'Contact'; href: string }
+    | { name: 'Services'; href: string; mega: MegaConfig }
   > = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/consulting', mega: servicesMega },
-    { name: 'Training', href: '/talent-development', mega: trainingMega },
-    { name: 'Work Experience', href: '/work-experience', mega: workExperienceMega },
-    { name: 'Success Stories', href: '/success-stories' },
-    { name: 'Resources', href: '/resources' },
+    { name: 'Services', href: '/services', mega: servicesMega },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Industries', href: '/industries' },
+    { name: 'Careers', href: '/careers' },
+    { name: 'Training Pathway', href: '/training-pathway' },
+    { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -290,7 +116,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 right-0 z-50 bg-slate-900 shadow-2xl"
+      className="fixed top-0 left-0 right-0 z-50 bg-[#0B0F14] shadow-2xl"
       onMouseLeave={() => setActiveDropdown(null)}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
