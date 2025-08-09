@@ -5,6 +5,7 @@ import FeatureBand from '../components/FeatureBand';
 import ResultsBand from '../components/ResultsBand';
 import ImpactIntro from '../components/ImpactIntro';
 import TrustBand from '../components/TrustBand';
+import PartnersBand from '../components/PartnersBand';
 
 const Home = () => {
   return (
@@ -81,6 +82,9 @@ const Home = () => {
 
       {/* Impact Intro Section */}
       <ImpactIntro />
+
+      {/* Partners Band Section */}
+      <PartnersBand />
 
       {/* Trust Band Section */}
       <TrustBand />
