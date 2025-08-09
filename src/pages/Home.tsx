@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Users, Target, Award, Clock, Briefcase, TrendingUp, Star, Zap } from 'lucide-react';
+import { ArrowRight, Users, Target, Award, Zap } from 'lucide-react';
 import FeatureBand from '../components/FeatureBand';
 import ResultsBand from '../components/ResultsBand';
 import ImpactIntro from '../components/ImpactIntro';
+import TrustBand from '../components/TrustBand';
 
 const Home = () => {
   return (
@@ -11,16 +12,16 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg")'
+            backgroundImage: 'url("https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg")',
           }}
         />
-        
+
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-slate-900/70" />
-        
+
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
@@ -32,10 +33,10 @@ const Home = () => {
               Tech Career
             </span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Bridge the gap between ambition and achievement with our unique blend of 
-            <span className="text-lime-400 font-semibold"> real project experience</span> and 
+            Bridge the gap between ambition and achievement with our unique blend of
+            <span className="text-lime-400 font-semibold"> real project experience</span> and
             <span className="text-purple-400 font-semibold"> expert mentorship</span>
           </p>
 
@@ -78,8 +79,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Impact Intro Section (new) */}
+      {/* Impact Intro Section */}
       <ImpactIntro />
+
+      {/* Trust Band Section */}
+      <TrustBand />
 
       {/* Services Section */}
       <section className="py-20 bg-white">
@@ -97,11 +101,11 @@ const Home = () => {
                 <Zap className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold text-slate-800 mb-3">Digital Transformation</h3>
-              <p className="text-slate-600 mb-4">End-to-end digital transformation strategies that modernize your business processes and technology infrastructure.</p>
-              <Link
-                to="/consulting"
-                className="inline-flex items-center text-lime-600 font-semibold hover:text-lime-700 transition-colors"
-              >
+              <p className="text-slate-600 mb-4">
+                End-to-end digital transformation strategies that modernize your business processes and technology
+                infrastructure.
+              </p>
+              <Link to="/consulting" className="inline-flex items-center text-lime-600 font-semibold hover:text-lime-700 transition-colors">
                 Learn More
                 <ArrowRight className="ml-1" size={16} />
               </Link>
@@ -112,11 +116,10 @@ const Home = () => {
                 <Users className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold text-slate-800 mb-3">Agile Implementation</h3>
-              <p className="text-slate-600 mb-4">Comprehensive agile transformation services to improve team productivity and project delivery.</p>
-              <Link
-                to="/consulting"
-                className="inline-flex items-center text-lime-600 font-semibold hover:text-lime-700 transition-colors"
-              >
+              <p className="text-slate-600 mb-4">
+                Comprehensive agile transformation services to improve team productivity and project delivery.
+              </p>
+              <Link to="/consulting" className="inline-flex items-center text-lime-600 font-semibold hover:text-lime-700 transition-colors">
                 Learn More
                 <ArrowRight className="ml-1" size={16} />
               </Link>
@@ -127,11 +130,10 @@ const Home = () => {
                 <Target className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold text-slate-800 mb-3">Business Analysis</h3>
-              <p className="text-slate-600 mb-4">Expert business analysis services to bridge the gap between business needs and technical solutions.</p>
-              <Link
-                to="/consulting"
-                className="inline-flex items-center text-lime-600 font-semibold hover:text-lime-700 transition-colors"
-              >
+              <p className="text-slate-600 mb-4">
+                Expert business analysis services to bridge the gap between business needs and technical solutions.
+              </p>
+              <Link to="/consulting" className="inline-flex items-center text-lime-600 font-semibold hover:text-lime-700 transition-colors">
                 Learn More
                 <ArrowRight className="ml-1" size={16} />
               </Link>
@@ -142,11 +144,10 @@ const Home = () => {
                 <Award className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold text-slate-800 mb-3">Technology Strategy</h3>
-              <p className="text-slate-600 mb-4">Strategic technology consulting to align your IT investments with business objectives.</p>
-              <Link
-                to="/consulting"
-                className="inline-flex items-center text-lime-600 font-semibold hover:text-lime-700 transition-colors"
-              >
+              <p className="text-slate-600 mb-4">
+                Strategic technology consulting to align your IT investments with business objectives.
+              </p>
+              <Link to="/consulting" className="inline-flex items-center text-lime-600 font-semibold hover:text-lime-700 transition-colors">
                 Learn More
                 <ArrowRight className="ml-1" size={16} />
               </Link>
@@ -166,16 +167,13 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-800 mb-4">Training Programs</h2>
-            <p className="text-xl text-slate-600">
-              Launch your tech career with our comprehensive training programs
-            </p>
+            <p className="text-xl text-slate-600">Launch your tech career with our comprehensive training programs</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <h3 className="text-xl font-bold text-slate-800 mb-3">Business Analyst</h3>
               <p className="text-slate-600 mb-4">Master business analysis with real project experience</p>
-              
               <div className="space-y-2 mb-6">
                 <div className="flex justify-between">
                   <span className="text-sm text-slate-600">Duration:</span>
@@ -190,7 +188,6 @@ const Home = () => {
                   <span className="text-sm font-semibold text-purple-600">96%</span>
                 </div>
               </div>
-
               <Link
                 to="/talent-development"
                 className="w-full inline-flex items-center justify-center bg-lime-500 text-white px-4 py-3 rounded-lg font-semibold hover:bg-lime-600 hover:shadow-lg transition-all duration-300"
@@ -203,7 +200,6 @@ const Home = () => {
             <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <h3 className="text-xl font-bold text-slate-800 mb-3">Project Manager</h3>
               <p className="text-slate-600 mb-4">Lead successful projects from start to finish</p>
-              
               <div className="space-y-2 mb-6">
                 <div className="flex justify-between">
                   <span className="text-sm text-slate-600">Duration:</span>
@@ -218,7 +214,6 @@ const Home = () => {
                   <span className="text-sm font-semibold text-purple-600">94%</span>
                 </div>
               </div>
-
               <Link
                 to="/talent-development"
                 className="w-full inline-flex items-center justify-center bg-lime-500 text-white px-4 py-3 rounded-lg font-semibold hover:bg-lime-600 hover:shadow-lg transition-all duration-300"
@@ -231,7 +226,6 @@ const Home = () => {
             <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <h3 className="text-xl font-bold text-slate-800 mb-3">Product Owner</h3>
               <p className="text-slate-600 mb-4">Drive product success with strategic thinking</p>
-              
               <div className="space-y-2 mb-6">
                 <div className="flex justify-between">
                   <span className="text-sm text-slate-600">Duration:</span>
@@ -246,7 +240,6 @@ const Home = () => {
                   <span className="text-sm font-semibold text-purple-600">95%</span>
                 </div>
               </div>
-
               <Link
                 to="/talent-development"
                 className="w-full inline-flex items-center justify-center bg-lime-500 text-white px-4 py-3 rounded-lg font-semibold hover:bg-lime-600 hover:shadow-lg transition-all duration-300"
@@ -259,7 +252,6 @@ const Home = () => {
             <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <h3 className="text-xl font-bold text-slate-800 mb-3">Scrum Master</h3>
               <p className="text-slate-600 mb-4">Facilitate agile teams and transformation</p>
-              
               <div className="space-y-2 mb-6">
                 <div className="flex justify-between">
                   <span className="text-sm text-slate-600">Duration:</span>
@@ -274,7 +266,6 @@ const Home = () => {
                   <span className="text-sm font-semibold text-purple-600">97%</span>
                 </div>
               </div>
-
               <Link
                 to="/talent-development"
                 className="w-full inline-flex items-center justify-center bg-lime-500 text-white px-4 py-3 rounded-lg font-semibold hover:bg-lime-600 hover:shadow-lg transition-all duration-300"
@@ -283,205 +274,6 @@ const Home = () => {
                 <ArrowRight className="ml-2" size={16} />
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Feature Band Section */}
-      <FeatureBand />
-
-      {/* Results Band Section */}
-      <ResultsBand />
-
-      {/* Training Programs Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Training Programs</h2>
-            <p className="text-xl text-slate-600">
-              Launch your tech career with our comprehensive training programs
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Business Analyst</h3>
-              <p className="text-slate-600 mb-4">Master business analysis with real project experience</p>
-              
-              <div className="space-y-2 mb-6">
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Duration:</span>
-                  <span className="text-sm font-semibold text-slate-800">16 weeks</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Starting Salary:</span>
-                  <span className="text-sm font-semibold text-lime-600">£45k - £65k</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Placement Rate:</span>
-                  <span className="text-sm font-semibold text-purple-600">96%</span>
-                </div>
-              </div>
-
-              <Link
-                to="/talent-development"
-                className="w-full inline-flex items-center justify-center bg-lime-500 text-white px-4 py-3 rounded-lg font-semibold hover:bg-lime-600 hover:shadow-lg transition-all duration-300"
-              >
-                Learn More
-                <ArrowRight className="ml-2" size={16} />
-              </Link>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Project Manager</h3>
-              <p className="text-slate-600 mb-4">Lead successful projects from start to finish</p>
-              
-              <div className="space-y-2 mb-6">
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Duration:</span>
-                  <span className="text-sm font-semibold text-slate-800">20 weeks</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Starting Salary:</span>
-                  <span className="text-sm font-semibold text-lime-600">£50k - £70k</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Placement Rate:</span>
-                  <span className="text-sm font-semibold text-purple-600">94%</span>
-                </div>
-              </div>
-
-              <Link
-                to="/talent-development"
-                className="w-full inline-flex items-center justify-center bg-lime-500 text-white px-4 py-3 rounded-lg font-semibold hover:bg-lime-600 hover:shadow-lg transition-all duration-300"
-              >
-                Learn More
-                <ArrowRight className="ml-2" size={16} />
-              </Link>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Product Owner</h3>
-              <p className="text-slate-600 mb-4">Drive product success with strategic thinking</p>
-              
-              <div className="space-y-2 mb-6">
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Duration:</span>
-                  <span className="text-sm font-semibold text-slate-800">14 weeks</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Starting Salary:</span>
-                  <span className="text-sm font-semibold text-lime-600">£48k - £68k</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Placement Rate:</span>
-                  <span className="text-sm font-semibold text-purple-600">95%</span>
-                </div>
-              </div>
-
-              <Link
-                to="/talent-development"
-                className="w-full inline-flex items-center justify-center bg-lime-500 text-white px-4 py-3 rounded-lg font-semibold hover:bg-lime-600 hover:shadow-lg transition-all duration-300"
-              >
-                Learn More
-                <ArrowRight className="ml-2" size={16} />
-              </Link>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Scrum Master</h3>
-              <p className="text-slate-600 mb-4">Facilitate agile teams and transformation</p>
-              
-              <div className="space-y-2 mb-6">
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Duration:</span>
-                  <span className="text-sm font-semibold text-slate-800">12 weeks</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Starting Salary:</span>
-                  <span className="text-sm font-semibold text-lime-600">£42k - £62k</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-600">Placement Rate:</span>
-                  <span className="text-sm font-semibold text-purple-600">97%</span>
-                </div>
-              </div>
-
-              <Link
-                to="/talent-development"
-                className="w-full inline-flex items-center justify-center bg-lime-500 text-white px-4 py-3 rounded-lg font-semibold hover:bg-lime-600 hover:shadow-lg transition-all duration-300"
-              >
-                Learn More
-                <ArrowRight className="ml-2" size={16} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">Success Stories</h2>
-          <p className="text-xl text-slate-600 mb-12">
-            Hear from our graduates who transformed their careers
-          </p>
-
-          <div className="bg-slate-50 p-8 rounded-2xl">
-            <div className="flex items-center justify-center mb-6">
-              <img
-                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
-                alt="Sarah Chen"
-                className="w-20 h-20 rounded-full object-cover"
-              />
-            </div>
-            
-            <div className="flex justify-center mb-4">
-              <div className="flex space-x-1">
-                <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                <Star className="w-5 h-5 text-yellow-400 fill-current" />
-              </div>
-            </div>
-            
-            <blockquote className="text-xl text-slate-700 italic mb-6">
-              "Tech Ascend's program gave me real project experience that made all the difference in my interviews. I went from marketing to Senior Business Analyst at JPMorgan Chase."
-            </blockquote>
-            
-            <div>
-              <div className="font-semibold text-slate-800">Sarah Chen</div>
-              <div className="text-slate-600">Senior Business Analyst at JPMorgan Chase</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-slate-900">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Career?
-          </h2>
-          <p className="text-xl text-slate-300 mb-8">
-            Join hundreds of professionals who have successfully transitioned into high-paying tech roles
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/apply"
-              className="inline-flex items-center bg-lime-500 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-lime-600 hover:shadow-lg transition-all duration-300"
-            >
-              Apply Now
-              <ArrowRight className="ml-2" size={20} />
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center border-2 border-lime-500 text-lime-500 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-lime-500 hover:text-white transition-all duration-300"
-            >
-              Schedule Consultation
-              <ArrowRight className="ml-2" size={20} />
-            </Link>
           </div>
         </div>
       </section>
