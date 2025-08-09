@@ -2,6 +2,10 @@ import React from 'react';
 import { ArrowRight, CheckCircle2, Briefcase, Workflow, Users, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useReveal } from '../hooks/useReveal';
+import MetricStrip from '../components/MetricStrip';
+import ProcessTimeline from '../components/ProcessTimeline';
+import ClientLogos from '../components/ClientLogos';
+import Faq from '../components/Faq';
 
 const Bullet: React.FC<{ text: string }> = ({ text }) => (
   <li className="flex items-start gap-3">
@@ -115,7 +119,13 @@ const Services: React.FC = () => {
       {/* Capabilities grid (dark contrast) */}
       <section ref={caps.ref as any} className="py-12 bg-[#0B0F14]">
         <div className="max-w-7xl mx-auto px-6">
-          <h3 className="text-2xl font-semibold text-white">Capabilities</h3>
+          <MetricStrip inverted metrics={[
+            { value: '95%', label: 'Placement success' },
+            { value: '200+', label: 'Analysts placed' },
+            { value: '12w', label: 'Avg project kick-off' },
+            { value: '£51k', label: 'Avg starting salary' },
+          ]} />
+          <h3 className="text-2xl font-semibold text-white mt-8">Capabilities</h3>
           <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[{icon: <Briefcase className="w-5 h-5" />, t:'Delivery Leadership'}, {icon:<Workflow className="w-5 h-5"/>, t:'Agile & Product'}, {icon:<Users className="w-5 h-5"/>, t:'Stakeholder & Change'}, {icon:<Sparkles className="w-5 h-5"/>, t:'Innovation Enablement'}].map((c, i) => (
               <div key={i} className="rounded-xl border border-white/10 bg-[#0F172A] p-4 text-white/90 flex items-center gap-3 hover:border-lime-400 transition-colors"
@@ -125,6 +135,40 @@ const Services: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Process timeline (light) */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <h3 className="text-2xl font-semibold text-slate-900">How we engage</h3>
+            <ProcessTimeline
+              steps={[
+                { k: '01', title: 'Discovery & framing', body: 'Align on outcomes, constraints, and success metrics.' },
+                { k: '02', title: 'Team & plan', body: 'Right-size capability and create an actionable roadmap.' },
+                { k: '03', title: 'Deliver & iterate', body: 'Agile delivery with visible progress and tight feedback loops.' },
+                { k: '04', title: 'Embed & scale', body: 'Knowledge transfer and handover to internal teams.' },
+              ]}
+            />
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold text-slate-900">FAQs</h3>
+            <Faq
+              items={[
+                { q: 'How quickly can you start?', a: 'Typically 2–4 weeks for consulting squads; faster for embedded roles.' },
+                { q: 'How does supervision work for analysts?', a: 'Each placement includes clear objectives, supervision, and performance reviews.' },
+                { q: 'Do you operate fixed-price?', a: 'Yes, for well-defined scopes. We also offer T&M and outcome-based models.' },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Clients band */}
+      <section className="py-12 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <ClientLogos />
         </div>
       </section>
 
