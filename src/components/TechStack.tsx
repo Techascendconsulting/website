@@ -23,13 +23,51 @@ const ITEMS: StackItem[] = [
   { name: 'Power BI', slug: 'powerbi' },
 ];
 
-const getIconSrc = (slug: string): string => {
-  // Some environments block certain brand paths; proxy those to ensure visibility
-  const needsProxy = slug === 'amazonaws' || slug === 'microsoftazure' || slug === 'powerbi';
-  const base = `cdn.simpleicons.org/${slug}`;
-  return needsProxy
-    ? `https://images.weserv.nl/?url=${encodeURIComponent(base)}`
-    : `https://${base}`;
+const getIconSources = (slug: string): string[] => [
+  // Primary CDN
+  `https://cdn.simpleicons.org/${slug}`,
+  // Fallback 1: unpkg
+  `https://unpkg.com/simple-icons@latest/icons/${slug}.svg`,
+  // Fallback 2: Iconify
+  `https://api.iconify.design/simple-icons:${slug}.svg`,
+];
+
+const ResilientIcon: React.FC<{ slug: string; name: string }> = ({ slug, name }) => {
+  const sources = getIconSources(slug);
+  const [index, setIndex] = useState(0);
+  const [broken, setBroken] = useState(false);
+
+  if (broken) {
+    return (
+      <div
+        aria-hidden
+        className="flex items-center justify-center w-14 h-14 rounded-md bg-slate-100 text-slate-500 text-xs font-medium"
+      >
+        {name.split(' ').map((w) => w[0]).join('').slice(0, 3)}
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={sources[index]}
+      alt={name}
+      width={56}
+      height={56}
+      className="transition-all duration-200"
+      style={{ filter: 'grayscale(100%)', WebkitFilter: 'grayscale(100%)' }}
+      onError={(e) => {
+        // Advance to next source; stop at the end to avoid loops/blinking
+        if (index < sources.length - 1) {
+          setIndex((i) => i + 1);
+        } else {
+          // Prevent further error loops
+          (e.currentTarget as HTMLImageElement).onerror = null;
+          setBroken(true);
+        }
+      }}
+    />
+  );
 };
 
 const TechStack: React.FC = () => {
@@ -92,18 +130,7 @@ const TechStack: React.FC = () => {
               ) : null}
 
               <div className="flex items-center justify-center">
-                <img
-                  src={getIconSrc(item.slug)}
-                  alt={item.name}
-                  width={56}
-                  height={56}
-                  className="transition-all duration-200"
-                  style={{ filter: 'grayscale(100%)', WebkitFilter: 'grayscale(100%)' }}
-                  onError={(e) => {
-                    // Fallback directly to CDN if proxy fails
-                    (e.currentTarget as HTMLImageElement).src = `https://cdn.simpleicons.org/${item.slug}`;
-                  }}
-                />
+                <ResilientIcon slug={item.slug} name={item.name} />
               </div>
               <div className="text-sm font-medium text-slate-600 transition-colors">{item.name}</div>
               <div aria-hidden className="pointer-events-none absolute inset-0 rounded-xl border transition-colors" style={{ borderColor: 'transparent' }} />
