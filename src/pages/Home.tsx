@@ -7,6 +7,7 @@ import ImpactIntro from '../components/ImpactIntro';
 import TrustBand from '../components/TrustBand';
 import PartnersBand from '../components/PartnersBand';
 import CredibilityCollage from '../components/CredibilityCollage';
+import TechStack from '../components/TechStack';
 
 const Home = () => {
   return (
@@ -90,76 +91,8 @@ const Home = () => {
       {/* Trust Band Section */}
       <TrustBand />
 
-      {/* Services Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Our Services</h2>
-            <p className="text-xl text-slate-600">
-              Comprehensive solutions for business transformation and career development
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-slate-50 p-6 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mb-6 text-white">
-                <Zap className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Digital Transformation</h3>
-              <p className="text-slate-600 mb-4">
-                End-to-end digital transformation strategies that modernize your business processes and technology
-                infrastructure.
-              </p>
-              <Link to="/consulting" className="inline-flex items-center text-lime-600 font-semibold hover:text-lime-700 transition-colors">
-                Learn More
-                <ArrowRight className="ml-1" size={16} />
-              </Link>
-            </div>
-
-            <div className="bg-slate-50 p-6 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-lime-500 rounded-xl flex items-center justify-center mb-6 text-white">
-                <Users className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Agile Implementation</h3>
-              <p className="text-slate-600 mb-4">
-                Comprehensive agile transformation services to improve team productivity and project delivery.
-              </p>
-              <Link to="/consulting" className="inline-flex items-center text-lime-600 font-semibold hover:text-lime-700 transition-colors">
-                Learn More
-                <ArrowRight className="ml-1" size={16} />
-              </Link>
-            </div>
-
-            <div className="bg-slate-50 p-6 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mb-6 text-white">
-                <Target className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Business Analysis</h3>
-              <p className="text-slate-600 mb-4">
-                Expert business analysis services to bridge the gap between business needs and technical solutions.
-              </p>
-              <Link to="/consulting" className="inline-flex items-center text-lime-600 font-semibold hover:text-lime-700 transition-colors">
-                Learn More
-                <ArrowRight className="ml-1" size={16} />
-              </Link>
-            </div>
-
-            <div className="bg-slate-50 p-6 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-16 h-16 bg-lime-500 rounded-xl flex items-center justify-center mb-6 text-white">
-                <Award className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-3">Technology Strategy</h3>
-              <p className="text-slate-600 mb-4">
-                Strategic technology consulting to align your IT investments with business objectives.
-              </p>
-              <Link to="/consulting" className="inline-flex items-center text-lime-600 font-semibold hover:text-lime-700 transition-colors">
-                Learn More
-                <ArrowRight className="ml-1" size={16} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Tech Stack Section (replaces Our Services) */}
+      <TechStack />
 
       {/* Feature Band Section */}
       <FeatureBand />
@@ -167,7 +100,7 @@ const Home = () => {
       {/* Results Band Section */}
       <ResultsBand />
 
-      {/* Credibility Collage Section (replaces Training Programs) */}
+      {/* Credibility Collage Section */}
       <CredibilityCollage />
     </div>
   );
