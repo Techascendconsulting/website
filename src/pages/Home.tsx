@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Users, Target, Award, Clock, Briefcase, TrendingUp, Star, Zap } from 'lucide-react';
+import FeatureBand from '../components/FeatureBand';
 
 const Home = () => {
   return (
@@ -148,6 +149,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Feature Band Section */}
+      <FeatureBand />
 
       {/* Training Programs Section */}
       <section className="py-20 bg-slate-50">
