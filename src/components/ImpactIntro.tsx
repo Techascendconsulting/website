@@ -28,23 +28,23 @@ const ImpactIntro: React.FC = () => {
 
             <ul className="mt-8 space-y-3 text-slate-700">
               <li className="flex gap-3">
-                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-lime-500" aria-hidden />
+                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-purple-600" aria-hidden />
                 <span>Deliver business-critical projects with experienced consultants and project-ready talent.</span>
               </li>
               <li className="flex gap-3">
-                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-lime-500" aria-hidden />
+                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-purple-600" aria-hidden />
                 <span>Reduce delivery risk through structured processes, Agile practices, and transparent communication.</span>
               </li>
               <li className="flex gap-3">
-                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-lime-500" aria-hidden />
+                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-purple-600" aria-hidden />
                 <span>Provide access to a steady pipeline of professionals trained on live projects.</span>
               </li>
               <li className="flex gap-3">
-                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-lime-500" aria-hidden />
+                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-purple-600" aria-hidden />
                 <span>Support both immediate project needs and long-term talent development strategies.</span>
               </li>
               <li className="flex gap-3">
-                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-lime-500" aria-hidden />
+                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-purple-600" aria-hidden />
                 <span>Align every engagement with measurable business outcomes.</span>
               </li>
             </ul>
